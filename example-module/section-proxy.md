@@ -90,9 +90,9 @@ The `env` member requires `name` and `value`. The `valueFrom` member is not perm
 
 ## hpa
 
-The optional `hpa` portion of the section proxy yaml is used to set defaults on the horizontal pod autoscaler. It tries to match the HPA v2beta1 API definition as closely as possible.
+The optional `hpa` portion of the section proxy yaml is used to set defaults on the horizontal pod autoscaler. It tries to match the HPA v2beta1 API definition as closely as possible. We recommend leaving this section as default as the Section team will fine tune this. 
 
 `apiVersion` - this is the API version the HPA spec is trying to match, only v2beta1 currently supported.
 `spec` - contains the v2beta1 HPA spec https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#horizontalpodautoscalerspec-v2beta1-autoscaling
 
-`spec.scaleTargetRef` - unspoorted by section-proxy.yaml, Environment Provisioner controls this.
+`spec.scaleTargetRef` - unsuported by section-proxy.yaml, Environment Provisioner controls this.
