@@ -1,0 +1,7 @@
+local _M={_VERSION = '1.0.0'}
+
+_M.ENABLED={{.Enabled}};
+_M.API_KEY="{{.APIKey}}";
+_M.EXAMPLE="{{.Example}}";
+
+return _M
