@@ -37,7 +37,7 @@ We will further explain the process of building your own module but the overall 
 ├── create-module-assets.sh
 └── example-module
     ├── Dockerfile
-    ├── section-proxy.md
+    ├── .section-proxy.yaml
     └── src
         ├── environment_variables.lua.gotemplate
         ├── handler
