@@ -16,7 +16,7 @@ Some modules running on Section : https://www.section.io/modules/
 
 ### How do customers start using your module?
 
-We will further explain the process of building your own module but the overall architecutre diagram is a good place to start
+We will further explain the process of building your own module but the overall architecture diagram is a good place to start
 
 ![Section Module Architecture](./architecture.png)
 
