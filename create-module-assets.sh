@@ -27,7 +27,7 @@ read_pod_template_file_image_tag () {
 namespaced_image_tag=$(read_pod_template_file_image_tag "$(find ./ -name .section-proxy.yaml -print0)")
 
 # build the example-module image
-docker build --tag="${namespaced_image_tag}" example-module
+docker build --tag="${namespaced_image_tag}" example
 
 # processes .section-proxy.yaml files to generate yaml files used to run the module on the Section platform
 readonly processor_version=latest
