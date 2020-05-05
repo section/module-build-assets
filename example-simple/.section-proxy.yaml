@@ -1,7 +1,7 @@
 metadata:
   configurationMountPath: /opt/proxy_config
   httpContainer: example
-  image: gcr.io/section-io/example:1.0.0-k1
+  image: gcr.io/section-io/example-simple:1.0.0-k1
   logs:
     additional:
       - container: example
@@ -14,7 +14,7 @@ metadata:
   metrics:
     path: /metrics
     port: 9000
-  name: example-module:1.0.0
+  name: example-simple:1.0.0
 spec:
   containers:
     - name: example
