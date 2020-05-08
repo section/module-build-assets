@@ -1,6 +1,16 @@
 #!/bin/bash
 set -o xtrace
 
+#default the build to the full example;otherwise, accept the first argument
+if [[ $# -eq 0 ]]
+  then
+    TARGET_EXAMPLE="example-full"
+  else
+    TARGET_EXAMPLE=$1   
+fi
+
+echo "Building example: $TARGET_EXAMPLE"
+
 cd -P -- "$(dirname "${0}")" || exit
 readonly SCRIPT_ROOT=$(pwd)
 
@@ -24,10 +34,13 @@ read_pod_template_file_image_tag () {
   grep -Eo --no-filename -e '\bgcr\.io/section-?io/[^:]+:\w[A-Za-z0-9_.-]*' "${resource_file}" || true
 }
 
-namespaced_image_tag=$(read_pod_template_file_image_tag "$(find ./ -name .section-proxy.yaml -print0)")
+namespaced_image_tag=$(read_pod_template_file_image_tag "$(find ./${TARGET_EXAMPLE} -name .section-proxy.yaml -print0)")
 
 # build the example-module image
-docker build --tag="${namespaced_image_tag}" example-module
+
+#why is this not tagging the image
+
+docker build --tag="${namespaced_image_tag}" ${TARGET_EXAMPLE}
 
 # processes .section-proxy.yaml files to generate yaml files used to run the module on the Section platform
 readonly processor_version=latest
@@ -77,5 +90,7 @@ docker run --rm \
 # delete the package-sync pod to force a restart and re-export
 # to avoid the 10 minute wait.
 kubectl delete pod -n section-shared -l name=package-sync --now
+
+echo "Built: ${namespaced_image_tag}"
 
 exit "${exit_code}"

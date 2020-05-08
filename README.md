@@ -60,15 +60,17 @@ We will further explain the process of building your own module but the overall 
 
 At the top level we have :
 
-- **create-module-assets.sh** : Helper script to build the module image locally and have it ready to be deployed in Developer PoP
+- **create-module-assets.sh** : Helper script to build the module image locally and have it ready to be deployed in Developer PoP. Optionally, takes an argument for one of the example apps (current example-full or example-simple). If no argument passed, it will
+use example-simple.
 - **Dockerfile** : Used by the helper script to set up module validation in Developer PoP
-- **example-module** : Contains assets used to build the module. Further explanation provided within the sub-directories.
+- **example-full** : Contains assets used to build the module. Further explanation provided within the sub-directories.
+- **example-simple** : Bare minimum assets used to build the module. Further explanation provided within the sub-directories.
 
 
 #### Running this example
 
 1. Make sure you have Developer PoP running on your local machine : https://www.section.io/docs/developer-workflow/tutorials/setting-up-your-developer-pop/
-2. Run `bash create-module-assets.sh` to build the *example-module* image and set up Developer PoP to validate the module.
+2. Run `bash create-module-assets.sh` to build the *example-full* image and set up Developer PoP to validate the module (optionally pass an example project it to build it. ex: `bash create-module-assets.sh example-simple`)
 3. Add the newly created module to your Section environment configuration file : https://www.section.io/docs/platform/environment/how-tos/install-a-new-proxy/
 4. Commit and push the updated configuration to the Developer-PoP.
 

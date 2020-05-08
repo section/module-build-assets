@@ -1,23 +1,23 @@
 metadata:
   configurationMountPath: /opt/proxy_config
-  httpContainer: examplemodule
-  image: gcr.io/section-io/examplemodule:1.0.0-k1
+  httpContainer: example
+  image: gcr.io/section-io/example-simple:1.0.0-k1
   logs:
     additional:
-      - container: examplemodule
+      - container: example
         name: error.log
         stream: stderr
-    handler: examplemodule
+    handler: example
     http:
-      container: examplemodule
+      container: example
       stream: stdout
   metrics:
     path: /metrics
     port: 9000
-  name: example-module:1.0.0
+  name: example-simple:1.0.0
 spec:
   containers:
-    - name: examplemodule
+    - name: example
       resources:
         limits:
           memory: 20Mi
