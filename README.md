@@ -1,4 +1,4 @@
-# Run custom workload at the edge
+# Deploy a Containerized Workload at the Edge
 
 The repository gives a starting point on how to build modules to run on Section's Edge Compute network.
 
