@@ -8,11 +8,11 @@ Contains an example module that can be deployed on the Section Edge Compute Plat
 create-module-assets.sh
 example-simple
 ├── proxy
-├── proxy_config
     └── nginx.conf
-└── .section-proxy.yml
-└── Dockerfile
-└── prepare.sh
+├── proxy_config
+├── .section-proxy.yml
+├──Dockerfile
+├──prepare.sh
 └── validate.sh
 
 ```
