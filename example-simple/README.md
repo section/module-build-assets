@@ -11,8 +11,8 @@ example-simple
     └── nginx.conf
 ├── proxy_config
 ├── .section-proxy.yml
-├──Dockerfile
-├──prepare.sh
+├── Dockerfile
+├── prepare.sh
 └── validate.sh
 
 ```
